@@ -1,4 +1,6 @@
 {
-  "liveServer.settings.root": "/public",
-  "liveServer.settings.CustomBrowser": "default"
+  "liveServer.settings.root": "public",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.ignoreFiles": [".vscode/**", "node_modules/**", ".git/**", "*.mp4"]
 }

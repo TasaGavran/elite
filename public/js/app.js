@@ -32,13 +32,23 @@
     }
   }
 
+  function isNarrowViewport() {
+    return window.matchMedia("(max-width: 719px)").matches;
+  }
+
   function initParallax() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isNarrowViewport()) return;
     var layers = document.querySelectorAll("[data-parallax]");
     if (!layers.length) return;
 
     var ticking = false;
     function update() {
+      if (window.matchMedia("(max-width: 719px)").matches) {
+        layers.forEach(function (el) {
+          el.style.removeProperty("--parallax-y");
+        });
+        return;
+      }
       var scrollY = window.scrollY || 0;
       var vh = window.innerHeight || 1;
       layers.forEach(function (el) {
@@ -65,7 +75,7 @@
   }
 
   function initHeroTilt() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isNarrowViewport()) return;
     var hero = document.querySelector(".hero-stage");
     if (!hero) return;
 
@@ -123,6 +133,35 @@
     inner.appendChild(clone);
   }
 
+  function initAmbientVideos() {
+    var videos = document.querySelectorAll("video.video-ambient");
+    if (!videos.length) return;
+    videos.forEach(function (v) {
+      v.muted = true;
+      v.defaultMuted = true;
+      v.volume = 0;
+      v.setAttribute("muted", "");
+      if (prefersReducedMotion) {
+        v.removeAttribute("autoplay");
+        v.pause();
+        var card = v.closest(".video-card--ambient");
+        var poster = card && card.getAttribute("data-static-poster");
+        if (card && poster) {
+          v.style.display = "none";
+          card.style.backgroundImage = "url('" + poster.replace(/'/g, "\\'") + "')";
+          card.style.backgroundSize = "cover";
+          card.style.backgroundPosition = "center";
+          card.style.backgroundColor = "#000";
+        }
+        return;
+      }
+      var p = v.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(function () {});
+      }
+    });
+  }
+
   function initCardSpotlight() {
     if (prefersReducedMotion) return;
     document.querySelectorAll(".feature-card").forEach(function (card) {
@@ -144,6 +183,7 @@
     initHeroTilt();
     initReveal();
     initMarquee();
+    initAmbientVideos();
     initCardSpotlight();
   });
 })();

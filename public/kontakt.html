@@ -2,8 +2,8 @@
 <html lang="sr-Latn">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kontakt Elite Gaming Jagodina — telefon, e-pošta i društvene mreže." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Kontakt Elite Gaming Jagodina — adresa Kneginje Milice 90, telefon, e-pošta, mapa i društvene mreže." />
     <title>Kontakt — Elite Gaming Jagodina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2306060a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2300f5d4' font-family='system-ui' font-weight='800' font-size='14'%3EE%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Preskoči na sadržaj</a>
@@ -22,8 +22,11 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="logo">
-          Elite Gaming
-          <small>Jagodina</small>
+          <img class="logo-mark" src="images/logo.png" alt="" width="48" height="48" decoding="async" />
+          <span class="logo-text">
+            <span class="logo-title">Elite Gaming</span>
+            <small>Jagodina</small>
+          </span>
         </a>
         <nav class="nav-panel" id="primary-nav" aria-label="Glavna navigacija">
           <a href="index.html">Početna</a>
@@ -51,8 +54,7 @@
           <p class="section-eyebrow" data-reveal>Kontakt</p>
           <h1 data-reveal data-reveal-delay="1">Javite se</h1>
           <p data-reveal data-reveal-delay="2">
-            Za pitanja o radu, najavama i događajima koristite telefon, e-poštu ili poruke na društvenim mrežama. Na ovoj prezentacionoj stranici nema
-            rezervacija ni prijava preko obrasca.
+            Za pitanja o radu, najavama i događajima koristite telefon, e-poštu ili poruke na društvenim mrežama.
           </p>
         </div>
       </header>
@@ -70,8 +72,15 @@
               <a href="mailto:zerpo@icloud.com">zerpo@icloud.com</a>
             </div>
             <div class="contact-row">
-              <span>Lokacija</span>
-              <p>Jagodina, Srbija</p>
+              <span>Adresa</span>
+              <p>Kneginje Milice 90, Jagodina</p>
+              <a
+                class="map-external-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Kneginje+Milice+90,+Jagodina,+Serbia"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Otvori u Google Maps</a
+              >
             </div>
             <div class="social-row">
               <a
@@ -104,14 +113,19 @@
               </a>
             </div>
           </div>
-          <div data-reveal data-reveal-delay="1">
-            <div class="map-placeholder" role="img" aria-label="Rezervisano mesto za mapu ili fotografiju ulaza">
-              <div>
-                <p class="map-placeholder-title">Mapa ili fotografija</p>
-                <p class="map-placeholder-text">
-                  Ovde možete kasnije ugraditi statičnu mapu, sliku objekta ili uputstvo za dolazak. Za sada je polje namerno prazno.
-                </p>
+          <div class="contact-map-column" data-reveal data-reveal-delay="1">
+            <div class="map-embed-card">
+              <h3 class="map-embed-heading">Mapa</h3>
+              <div class="map-embed-wrap">
+                <iframe
+                  title="Lokacija Elite Gaming na Google Maps"
+                  src="https://www.google.com/maps?q=Kneginje+Milice+90%2C+Jagodina%2C+Serbia&amp;hl=sr&amp;z=17&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen=""
+                ></iframe>
               </div>
+              <p class="map-embed-caption">Elite Gaming Igraonica, Kneginje Milice 90.</p>
             </div>
           </div>
         </div>
@@ -121,9 +135,12 @@
     <footer class="site-footer">
       <div class="wrap footer-grid">
         <div class="footer-brand">
-          <div class="logo">
-            Elite Gaming
-            <small>Jagodina</small>
+          <div class="logo logo--footer">
+            <img class="logo-mark" src="images/logo.png" alt="" width="48" height="48" decoding="async" />
+            <span class="logo-text">
+              <span class="logo-title">Elite Gaming</span>
+              <small>Jagodina</small>
+            </span>
           </div>
           <p>Prostor za PC gaming i druženje u Jagodini. Informacije o radu i najavama pratite na mrežama.</p>
         </div>

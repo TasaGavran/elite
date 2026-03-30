@@ -2,7 +2,7 @@
 <html lang="sr-Latn">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
       content="Elite Gaming Jagodina — prostor za PC gaming, druženje i takmičenje. Pratite nas na društvenim mrežama."
@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2306060a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2300f5d4' font-family='system-ui' font-weight='800' font-size='14'%3EE%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Preskoči na sadržaj</a>
@@ -25,8 +25,11 @@
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="logo">
-          Elite Gaming
-          <small>Jagodina</small>
+          <img class="logo-mark" src="images/logo.png" alt="" width="48" height="48" decoding="async" />
+          <span class="logo-text">
+            <span class="logo-title">Elite Gaming</span>
+            <small>Jagodina</small>
+          </span>
         </a>
         <nav class="nav-panel" id="primary-nav" aria-label="Glavna navigacija">
           <a href="index.html" class="is-active">Početna</a>
@@ -74,8 +77,14 @@
           </div>
           <div class="hero-card" data-reveal>
             <div class="hero-card-inner">
-              <img src="images/placeholder.svg" alt="" width="1200" height="800" />
-              <p class="hero-card-caption">Mesto za vašu fotografiju prostora ili atmosfere (zamenite fajl u folderu images).</p>
+              <img
+                src="images/elite-01.jpg"
+                alt="Atmosfera u Elite Gaming prostoru u Jagodini"
+                width="1200"
+                height="900"
+                decoding="async"
+              />
+              <p class="hero-card-caption">Još fotografija u galeriji.</p>
             </div>
           </div>
         </div>
@@ -129,7 +138,14 @@
               </ul>
             </div>
             <div class="split-visual" data-parallax="0.08" data-reveal data-reveal-delay="1">
-              <img src="images/placeholder.svg" alt="" width="1200" height="800" />
+              <img
+                src="images/elite-02.jpg"
+                alt="Gaming setup i prostor za igru u Elite Gaming Jagodina"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -162,6 +178,50 @@
         </div>
       </section>
 
+      <section class="video-showcase">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="section-eyebrow">Video</p>
+            <h2>Uživo iz prostora</h2>
+            <p>Atmosfera prostora u pokretu — u petlji, bez zvuka.</p>
+          </div>
+          <div class="video-grid">
+            <div class="video-card video-card--ambient" data-reveal data-reveal-delay="1" data-static-poster="images/elite-01.jpg">
+              <video
+                class="video-ambient"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="metadata"
+                poster="images/elite-01.jpg"
+                disablepictureinpicture
+                disableremoteplayback
+                aria-hidden="true"
+              >
+                <source src="videos/elite-video-01.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="video-card video-card--ambient" data-reveal data-reveal-delay="2" data-static-poster="images/elite-03.jpg">
+              <video
+                class="video-ambient"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="metadata"
+                poster="images/elite-03.jpg"
+                disablepictureinpicture
+                disableremoteplayback
+                aria-hidden="true"
+              >
+                <source src="videos/elite-video-02.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section-cta">
         <div class="wrap">
           <div class="section-head section-head--center" data-reveal>
@@ -177,9 +237,12 @@
     <footer class="site-footer">
       <div class="wrap footer-grid">
         <div class="footer-brand">
-          <div class="logo">
-            Elite Gaming
-            <small>Jagodina</small>
+          <div class="logo logo--footer">
+            <img class="logo-mark" src="images/logo.png" alt="" width="48" height="48" decoding="async" />
+            <span class="logo-text">
+              <span class="logo-title">Elite Gaming</span>
+              <small>Jagodina</small>
+            </span>
           </div>
           <p>Prostor za PC gaming i druženje u Jagodini. Informacije o radu i najavama pratite na mrežama.</p>
         </div>
