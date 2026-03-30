@@ -17,18 +17,35 @@
     onScroll();
 
     if (toggle && panel) {
-      toggle.addEventListener("click", function () {
-        var open = panel.classList.toggle("is-open");
+      function setNavOpen(open) {
+        panel.classList.toggle("is-open", open);
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
         document.body.classList.toggle("nav-open", open);
+      }
+
+      toggle.addEventListener("click", function () {
+        setNavOpen(!panel.classList.contains("is-open"));
       });
       panel.querySelectorAll("a").forEach(function (a) {
         a.addEventListener("click", function () {
-          panel.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
+          setNavOpen(false);
         });
       });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && panel.classList.contains("is-open")) {
+          setNavOpen(false);
+          toggle.focus();
+        }
+      });
+      window.addEventListener(
+        "resize",
+        function () {
+          if (window.matchMedia("(min-width: 861px)").matches) {
+            setNavOpen(false);
+          }
+        },
+        { passive: true }
+      );
     }
   }
 
